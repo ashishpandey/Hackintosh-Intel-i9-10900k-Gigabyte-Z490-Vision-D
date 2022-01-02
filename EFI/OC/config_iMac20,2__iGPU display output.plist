@@ -8,6 +8,14 @@
             <array>
                 <dict>
                     <key>Comment</key>
+                    <string>Improves Radeon RX580 Performance</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>Path</key>
+                    <string>SSDT-RX580-Version 1.0.aml</string>
+                </dict>
+                <dict>
+                    <key>Comment</key>
                     <string>Thunderbolt</string>
                     <key>Enabled</key>
                     <false/>
@@ -171,7 +179,7 @@
                     <key>acpi-wake-type</key>
                     <data>AQ==</data>
                 </dict>
-                <key>PciRoot(0x0)/Pci(0x1B,0x2)/Pci(0x0,0x0)</key>
+                <key>PciRoot(0x0)/Pci(0x1C,0x1)/Pci(0x0, 0x0)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
                     <string>Internal@0,27,2/0,0</string>
@@ -314,9 +322,9 @@
                     <key>Arch</key>
                     <string>x86_64</string>
                     <key>BundlePath</key>
-                    <string>USBMap_iMacPro11.kext</string>
+                    <string>USBMap_iMac202.kext</string>
                     <key>Comment</key>
-                    <string>V1.0 | Injects USB Port config if you use iMacPro1,1</string>
+                    <string>V1.0 | Injects USB Port config if you use iMac20,2</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>

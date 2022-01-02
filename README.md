@@ -1,5 +1,7 @@
 # Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D
 
+Forked from [SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D) and applied with my own [changes on top](ForkChangelog.md)
+
 ![About this mac](Docs/macOSBigSur.png)
 
 Hello folks,
