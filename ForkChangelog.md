@@ -33,5 +33,4 @@ Changes on top of SchmockLord's upstream
 #### Jan 2022
 - added fork changelog
 - added SSDT-RX580-Version 1.0.aml (RX580 optimizations)
-- reverted PCIE key for Intel I225-V Ethernet 
-- correct USB port config kext for 20.2
+- Added RadeonSensor and SMCRadeonGPU for RX6900XT support
