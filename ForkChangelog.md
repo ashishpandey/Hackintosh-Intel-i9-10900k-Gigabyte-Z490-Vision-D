@@ -19,7 +19,7 @@ My own setup and changes - use case is daily work driver running lightroom + dav
 - PSU: Corsair HXi 1000 (USB link not connected to avoid sleep-wake issues)
 
 # Software
-- MacOS Big Sur
+- MacOS ~Big Sur~ Monterey
 - iStats Menus
 - HWInfo
 
@@ -34,3 +34,5 @@ Changes on top of SchmockLord's upstream
 - added fork changelog
 - added SSDT-RX580-Version 1.0.aml (RX580 optimizations)
 - Added RadeonSensor and SMCRadeonGPU for RX6900XT support
+- `UpdateSMBIOSMode=Custom` & `CustomSMBIOSGuid=true` for Windows boot support
+- `SecureBootModel=Default` for Monterey software update support
