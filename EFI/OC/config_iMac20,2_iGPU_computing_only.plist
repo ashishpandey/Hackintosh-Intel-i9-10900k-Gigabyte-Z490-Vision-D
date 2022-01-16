@@ -8,19 +8,19 @@
             <array>
                 <dict>
                     <key>Comment</key>
-                    <string>Improves Radeon RX580 Performance</string>
+                    <string>Enables Thunderbolt 3 Hot Plug</string>
                     <key>Enabled</key>
                     <true/>
                     <key>Path</key>
-                    <string>SSDT-RX580-Version 1.0.aml</string>
+                    <string>SSDT-TB3HP.aml</string>
                 </dict>
                 <dict>
                     <key>Comment</key>
                     <string>Thunderbolt</string>
                     <key>Enabled</key>
-                    <false/>
+                    <true/>
                     <key>Path</key>
-                    <string>SSDT-DTPG.aml</string>
+                    <string>SSDT-DTGP.aml</string>
                 </dict>
                 <dict>
                     <key>Comment</key>
@@ -64,11 +64,11 @@
                 </dict>
                 <dict>
                     <key>Comment</key>
-                    <string>Enables Thunderbolt 3 Hot Plug</string>
+                    <string>Improves Radeon RX580 Performance</string>
                     <key>Enabled</key>
-                    <false/>
+                    <true/>
                     <key>Path</key>
-                    <string>SSDT-TB3HP.aml</string>
+                    <string>SSDT-RX580-Version 1.0.aml</string>
                 </dict>
             </array>
             <key>Delete</key>
@@ -179,10 +179,10 @@
                     <key>acpi-wake-type</key>
                     <data>AQ==</data>
                 </dict>
-                <key>PciRoot(0x0)/Pci(0x1C,0x1)/Pci(0x0, 0x0)</key>
+                <key>PciRoot(0x0)/Pci(0x1C,0x1)/Pci(0x0,0x0)</key>
                 <dict>
                     <key>AAPL,slot-name</key>
-                    <string>Internal@0,27,2/0,0</string>
+                    <string>Internal@0,28,1/0,0</string>
                     <key>device-id</key>
                     <data>8xWGgA==</data>
                     <key>device_type</key>
@@ -246,7 +246,7 @@
                     <key>BundlePath</key>
                     <string>VirtualSMC.kext</string>
                     <key>Comment</key>
-                    <string>V1.2.9 | SMC emulator</string>
+                    <string>V1.2.8 | SMC emulator</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -372,7 +372,7 @@
                     <key>BundlePath</key>
                     <string>SMCProcessor.kext</string>
                     <key>Comment</key>
-                    <string>V1.2.9</string>
+                    <string>V1.2.8</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -390,7 +390,7 @@
                     <key>BundlePath</key>
                     <string>SMCSuperIO.kext</string>
                     <key>Comment</key>
-                    <string>V1.2.9</string>
+                    <string>V1.2.8</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -660,7 +660,7 @@
                     <key>SystemAudioVolume</key>
                     <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>agdpmod=pikera shikigva=80 -lilubetaall keepsyms=1</string>
+                    <string>agdpmod=pikera shikigva=80 -lilubetaall keepsyms=1 dk.e1000=0</string>
                     <key>csr-active-config</key>
                     <data>5wMAAA==</data>
                     <key>prev-lang:kbd</key>
@@ -790,6 +790,12 @@
                 <integer>0</integer>
                 <key>KeySubsequentDelay</key>
                 <integer>5</integer>
+                <key>PointerPollMask</key>
+                <integer>-1</integer>
+                <key>PointerPollMax</key>
+                <integer>80</integer>
+                <key>PointerPollMin</key>
+                <integer>10</integer>
                 <key>PointerSpeedDiv</key>
                 <integer>1</integer>
                 <key>PointerSpeedMul</key>
@@ -801,20 +807,24 @@
                 <integer>0</integer>
                 <key>AudioDevice</key>
                 <string>PciRoot(0x0)/Pci(0x1F,0x3)</string>
-                <key>AudioOut</key>
-                <integer>3</integer>
+                <key>AudioOutMask</key>
+                <integer>1</integer>
                 <key>AudioSupport</key>
                 <false/>
-                <key>MinimumVolume</key>
-                <integer>20</integer>
+                <key>DisconnectHda</key>
+                <false/>
+                <key>MaximumGain</key>
+                <integer>-15</integer>
+                <key>MinimumAssistGain</key>
+                <integer>-30</integer>
+                <key>MinimumAudibleGain</key>
+                <integer>-55</integer>
                 <key>PlayChime</key>
                 <string>Auto</string>
                 <key>ResetTrafficClass</key>
                 <false/>
                 <key>SetupDelay</key>
                 <integer>0</integer>
-                <key>VolumeAmplifier</key>
-                <integer>143</integer>
             </dict>
             <key>ConnectDrivers</key>
             <true/>
