@@ -34,5 +34,6 @@ Changes on top of SchmockLord's upstream
 - added fork changelog
 - added SSDT-RX580-Version 1.0.aml (RX580 optimizations)
 - Added RadeonSensor and SMCRadeonGPU for RX6900XT support
+- Added BrcmPatchRAM for Bluetooth support
 - `UpdateSMBIOSMode=Custom` & `CustomSMBIOSGuid=true` for Windows boot support
 - `SecureBootModel=Default` for Monterey software update support

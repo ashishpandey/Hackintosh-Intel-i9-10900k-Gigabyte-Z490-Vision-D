@@ -2,48 +2,61 @@
 
 ## USB Port Configuration
 
-In this repo the current Port Configuration is that I use USBInjectAll.kext and I created my own SSDT-EC-USBX.aml and SSDT-UIAC.aml using Hackintool 3.4.0.
+I don't use the Kext-based USB-configuration anymore. Instead, we use the USB-Port configuration via SSDT (SSDT-USB-Ports-Z490-VisionD.aml). 
 
-By default all the ports are enabled, except for the USB 2.0 port that is labeled "BIOS". (That Port is intended to be used to flash the BIOS.) I had to disable this BIOS port to stay within the 15 port USB limit. Moreover, I don't need this port as much as the faster ones. BIOS flashing will work anyways, because this is done prior the Bootloader config.
-
-The current default port configuration works perfectly fine and so most people can likely skip reading the following sections if you don't want / need to make changes to the default Port Configuration.
-
-However, the details are intesting and the following sections detail alternative Port Configurations and how to create your own if you are working with a different motherboard or are so inclined to make changes. 
+The benefit of this is, that we don't need specific kexts for each SMBIOS (iMac20,2; iMacPro1,1 etc.) and it is the cleanest way of doing the USB-Port Mapping.
 
 ### My USB-port configuration ###
 
 ![USB-Port Configuration](Docs/USB-port-Configuration-Release-v5.3.png)
 
-### HowTo create your own USB-port configuration ###
+### HowTo change the USB-port configuration ###
 
-If you want to use this EFI-folder for a different Z490 Board, you should create your own ```SSDT-UIAC.aml``` with Hackintool.
+In my SSDT you will see the comments for each port, some are enabled, some are disabled.
 
-At the end of this configuration, Hackintool will generate a USBPorts.kext and a SSDT-UIAC.aml and SSDT-EC-USBX.dsl.
+Per port you have two relevant methods: 
+- GUPC (Gigabyte variant of the standard method _UPC: USB port Capabilities)
+- GPLD (Gigabyte variant of the standard method _PLD: Physical Location of Device)
 
-And then you should either use ```USBInjectAll.kext``` + ```SSDT-UIAC.aml``` + ```SSDT-EC-USBX.aml``` OR the ```USBPorts.kext``` only.
+**GUPC describes the USB-port capabilities.**
 
-BTW: Most have different variations for the ```SSDT-EC-USBX.aml```. I guess most of the time ```SSDT-EC.aml``` and ```SSDT-EC-DESKTOP.aml``` have the same purpose. 
+E.g. GUPC (One, 0x03) means this port is enabled (one) and is a USB3-Type A (0x03) The first variable means enabled/disabled (one or 0xFF/zero or 0x00), the second variable describes the port itself.
 
-1. Before we start with the configuration you should use the ```USBInjectAll.kext``` without ```SSDT-UIAC.aml```. The ```SSDT-EC-USBX.aml``` should stay at this time, your system might become unbootable without the ```SDT-EC-USBX.aml```. But delete ```USBPorts.kext``` and ```SSDT-UIAC.aml```.
+- zero is the same as 0x00
+- one is the same as 0xFF
 
-2. Open Hackintool and go to the USB-section. Normally you see much more than 15 entries here and also the Connector-column contains wrong definitions.
+**Port types:**
+- 0x00 or zero: standard USB2 port (usually black)
+- 0x03: USB3 Type A (usually blue, red or yellow)
+- 0x09: Type-C with switch, where it doesn't matter which direction you plug the device in, it is always the same port.
+- 0x0A: Type-C without switch, where there are used two ports, each for one direction.
+- 0xFF: internal devices used for RGB, Audio, Bluetooth etc.
 
-3. Press the broom-icon to clear the USB-port section and then the refresh icon. Your USB-port section should look similar to this and is showing much more ports than the allowed number of 15 and a wrong connector definition:
+**GPLD-method describes the port location.** 
 
-![USB-Ports before Configuration](Docs/USB-Ports-before-Configuration.png)
+E.g. GPLD (One, 0x09) means this port is available on this board (one) and has the location HS09 (0x09). 
 
-4. Depending on what ports you have, you should have a USB2, a USB3 and a USBC device. 
+HS11 would be (0x0B). SS ports start with 1. E.g. SS01 is 0x11, SS10 is 0x1A.
 
-5. Now plug in the USB2 stick into all USB2/USB3 ports. Once connected the ports should be highlighted green in Hackintool. For all the green ones set the connector type to "USB2" first. Then plugin the USB3-stick into all USB2/USB3 ports. All ports, where you see your USB3-stick shown in the device column, should then be set to "USB3". So if you have a port that supports USB2 and USB3, you should set it to the higher standard, so "USB3". At last you plugin the USBC-stick into all the USBC-ports. Plug them in  both ways. If your stick appears at the same port in both direction, set it to "TypeC+SW". If two different ports show the device when you plug in the stick in both directions in the same port, set both to "TypeC".
+If you don't know the Hex-names of the ports, you can use Hackintool, e.g. Decimal 9 is also Hex 9 but 10 is A:
+![Screen Shot 2022-02-10 at 12 01 54](https://user-images.githubusercontent.com/19785918/153393913-d64e66da-6dfc-4762-94e5-6418b84d95b6.png)
 
-6. Now you need to limit the number of ports/entries to 15. Thunderbolt-ports (eg. "SSP1" or "SSP2") don't count into the 15 port limit. So now you need to decide for yourself, which of the ports you don't need so much. E.g. I have deleted the USB2-port that is labeled "BIOS" because I prefer to keep a faster USB3 port over a USB2 port.
 
-7. When you are done, your Hackintool should look like this:
+If you want to disable ports for macOS-only, you should wrap them like this:
+```
+If (_OSI ("Darwin"))
+{
+  Return (GUPC (Zero, Zero))
+}
+Else
+{
+  Return (GUPC (0xFF, 0x09))
+}
+```
+_OSI ("Darwin") means "If the operating system is macOS (Darwin Kernel) do this..."
 
-![USB-Ports before Configuration](Docs/USB-Ports-after-Configuration.png)
+This way other OS like Windows or Linux would use the Else-case where this port is enabled (0xFF) and has is a type-C with switch (0x09).
 
-8. Now click the export button. This will generate a ```USBPorts.kext```, a ```SSDT-EC-USBX.aml``` and a ```SSDT-UIAC.aml```. Now you either 
-a) Use only the ```USBPorts.kext``` (and delete ```USBInjectall.kext```, ```SSDT-EC-USBX.aml``` and ```SSDT-UIAC.aml```)
-Or
-b) Use ```USBInjectall.kext``` + ```SSDT-EC-USBX.aml``` + ```SSDT-UIAC.aml```.
+You also need to Delete the original ACPI-table for the USB-Port Mapping: SSDT-7-xh_cmsd4.aml 
 
+![Screen Shot 2022-02-10 at 11 58 13](https://user-images.githubusercontent.com/19785918/153393316-97496e56-d6c0-44fc-a62b-c43a9f1656d0.png)
