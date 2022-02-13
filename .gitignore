@@ -7,3 +7,4 @@ opencore-*.txt
 .DS_Store
 EFI/OC/config.plist
 EFI/OC/config.plist.*
+secrets.env
