@@ -10,7 +10,7 @@
 				<key>Comment</key>
 				<string>USB Port Mapping Z490 Vision D (no kext needed)</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-USB-Ports-Z490-VisionD.aml</string>
 			</dict>
@@ -87,7 +87,7 @@
 				<key>Comment</key>
 				<string>Delete original ACPI-table for USB-Port Mapping SSDT-7-xh_cmsd4.aml</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>OemTableId</key>
 				<data>eGhfY21zZDQ=</data>
 				<key>TableLength</key>
@@ -197,6 +197,8 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
+				<key>device-id</key>
+				<data>kj4AAA==</data>
 				<key>AAPL,ig-platform-id</key>
 				<data>BwCbPg==</data>
 				<key>AAPL,slot-name</key>
@@ -442,6 +444,42 @@
 				<key>Arch</key>
 				<string>x86_64</string>
 				<key>BundlePath</key>
+				<string>USBMap_iMac202.kext</string>
+				<key>Comment</key>
+				<string>V1.0 | USB-Port mapping for Gigabyte Z490 Vision D for iMac20,2.  Alternatively Disable this kext and enable SSDT-USB-Ports-Z490-VisionD.aml and the ACPI-Delete of the SSDT-7-xh_cmsd4.aml</string>
+				<key>Enabled</key>
+				<true/>
+				<key>ExecutablePath</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
+				<string>USBMap_iMacPro11.kext</string>
+				<key>Comment</key>
+				<string>V1.0 | USB-Port mapping for Gigabyte Z490 Vision D for iMacPro1,1.  Alternatively Disable this kext and enable SSDT-USB-Ports-Z490-VisionD.aml and the ACPI-Delete of the SSDT-7-xh_cmsd4.aml</string>
+				<key>Enabled</key>
+				<false/>
+				<key>ExecutablePath</key>
+				<string></string>
+				<key>MaxKernel</key>
+				<string></string>
+				<key>MinKernel</key>
+				<string></string>
+				<key>PlistPath</key>
+				<string>Contents/Info.plist</string>
+			</dict>
+			<dict>
+				<key>Arch</key>
+				<string>x86_64</string>
+				<key>BundlePath</key>
 				<string>RadeonSensor.kext</string>
 				<key>Comment</key>
 				<string>V0.3.1 | Reads AMD Radeon graphics sensors</string>
@@ -585,7 +623,7 @@
 			<key>ProvideCurrentCpuInfo</key>
 			<false/>
 			<key>SetApfsTrimTimeout</key>
-			<integer>-1</integer>
+			<integer>0</integer>
 			<key>ThirdPartyDrives</key>
 			<false/>
 			<key>XhciPortLimit</key>
@@ -648,6 +686,8 @@
 			<integer>0</integer>
 			<key>DisplayLevel</key>
 			<integer>2147483650</integer>
+			<key>LogModules</key>
+			<string>*</string>
 			<key>SerialInit</key>
 			<false/>
 			<key>SysReport</key>
@@ -714,7 +754,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>agdpmod=pikera shikigva=80 -lilubetaall keepsyms=1 dk.e1000=0</string>
+				<string>agdpmod=pikera shikigva=80 dk.e1000=0 keepsyms=1</string>
 				<key>csr-active-config</key>
 				<data>5wMAAA==</data>
 				<key>prev-lang:kbd</key>
