@@ -11,8 +11,6 @@ My own setup and changes - use case is daily work driver running lightroom + dav
 - GPU1: MSI Gaming X Trio RX 6900XT
   - DisplayPort to LG 31MU97-B
   - DisplayPort to motherboard displayport in
-- GPU2: Sapphire Nitro+ RX 580
-  - no outputs connected. Only used for compute for Davinci Resolve
 - Caldigit TS3 Plus Thunderbolt 3 Dock
   - connected to motherboard thunderbolt out
   - connected to LG ultrafine 24" via thunderbolt out
@@ -26,10 +24,18 @@ My own setup and changes - use case is daily work driver running lightroom + dav
 # Opencore specifics
 - Currently using **iMac20,2** - `config_iMac20,2__iGPU display output`
 
-# Fork ChangeLog
+# Differences from upstream
 
 Changes on top of SchmockLord's upstream
 
+- Added BrcmPatchRAM for Bluetooth support
+- `UpdateSMBIOSMode=Custom` & `CustomSMBIOSGuid=true` for Windows boot support
+
+# Fork ChangeLog
+#### Oct 2022
+- Removed SSDT-RX580-Version 1.0.aml as I am no longer using it
+- Reverted RadeonSensor and SMCRadeonGPU since upstream provides it now
+- Switched to Upstream provided value for `SecureBootModel`
 #### Jan 2022
 - added fork changelog
 - added SSDT-RX580-Version 1.0.aml (RX580 optimizations)
