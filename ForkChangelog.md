@@ -28,6 +28,7 @@ My own setup and changes - use case is daily work driver running lightroom + dav
 
 Changes on top of SchmockLord's upstream
 
+- running `generate_config.sh <file>` against one of the config_X.plist will patch serials from `secrets.env` file. See `secrets.example` for inspiration on creating secrets file
 - Added BrcmPatchRAM for Bluetooth support
 - `UpdateSMBIOSMode=Custom` & `CustomSMBIOSGuid=true` for Windows boot support
 
@@ -36,6 +37,10 @@ Changes on top of SchmockLord's upstream
 - Removed SSDT-RX580-Version 1.0.aml as I am no longer using it
 - Reverted RadeonSensor and SMCRadeonGPU since upstream provides it now
 - Switched to Upstream provided value for `SecureBootModel`
+
+#### Feb 2022
+- added generate_config.sh to patch secrets (serials) into config template
+
 #### Jan 2022
 - added fork changelog
 - added SSDT-RX580-Version 1.0.aml (RX580 optimizations)
