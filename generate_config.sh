@@ -15,6 +15,11 @@ if [ ! -f "${SCRIPT_DIR}/secrets.env" ]; then
     exit 1
 fi
 
+if [ $# -ne 1 ]; then
+    echo "Usage: generate_config.sh <path to config.plist template>"
+    exit 1
+fi
+
 TEMPLATE_PATH=$1
 if [ ! -f "${TEMPLATE_PATH}" ]; then
     echo "Usage: generate_config.sh <path to config.plist template>"

@@ -624,7 +624,7 @@
 			<false/>
 			<key>CustomPciSerialDevice</key>
 			<false/>
-			<key>CustomSMBIOSGuid</kßey>
+			<key>CustomSMBIOSGuid</key>
 			<true/>
 			<key>DisableIoMapper</key>
 			<true/>
