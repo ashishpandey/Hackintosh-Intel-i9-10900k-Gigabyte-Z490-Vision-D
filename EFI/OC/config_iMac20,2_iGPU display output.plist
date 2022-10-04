@@ -10,7 +10,7 @@
 				<key>Comment</key>
 				<string>Fixes the Intel I225-V Ethernet for macOS Ventura</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>Path</key>
 				<string>SSDT-I225V.aml</string>
 			</dict>
@@ -173,6 +173,17 @@
 				<key>acpi-wake-type</key>
 				<data>AQ==</data>
 			</dict>
+			<key>PciRoot(0x0)/Pci(0x1C,0x1)/Pci(0x0,0x0)</key>
+			<dict>
+				<key>AAPL,slot-name</key>
+				<string>Internal@0,28,1/0,0</string>
+				<key>device-id</key>
+				<data>8xWGgA==</data>
+				<key>device_type</key>
+				<string>Ethernet controller</string>
+				<key>model</key>
+				<string>Intel I225-V</string>
+			</dict>			
 			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
 			<dict>
 				<key>AAPL,slot-name</key>
@@ -497,7 +508,7 @@
 				<key>Comment</key>
 				<string>Needed for the I225-V with macOS Ventura</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/AppleIntelI210Ethernet</string>
 				<key>MaxKernel</key>
