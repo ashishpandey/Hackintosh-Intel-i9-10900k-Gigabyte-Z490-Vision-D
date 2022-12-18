@@ -48,3 +48,8 @@ Changes on top of SchmockLord's upstream
 - Added BrcmPatchRAM for Bluetooth support
 - `UpdateSMBIOSMode=Custom` & `CustomSMBIOSGuid=true` for Windows boot support
 - `SecureBootModel=Default` for Monterey software update support
+
+#### Dec 2022
+- sync to upstream [7d9d697](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D/tree/7d9d69783ea8305c98457e5339981319e00b99d6)
+- OC 0.8.7
+- Ready for Ventura update
