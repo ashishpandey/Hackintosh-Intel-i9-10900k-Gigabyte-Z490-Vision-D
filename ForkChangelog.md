@@ -53,3 +53,8 @@ Changes on top of SchmockLord's upstream
 - sync to upstream [7d9d697](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D/tree/7d9d69783ea8305c98457e5339981319e00b99d6)
 - OC 0.8.7
 - Ready for Ventura update
+
+#### Jul 2022
+- sunc to upstream [d7b4e99](https://github.com/ashishpandey/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D/commit/d7b4e999bed6e7d1c84e14ab19b614e5633cd6db)
+- OC 0.9.3
+- added script to print currently booted OC version
