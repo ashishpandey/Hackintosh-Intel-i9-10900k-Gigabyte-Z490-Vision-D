@@ -29,8 +29,9 @@ My own setup and changes - use case is daily work driver running lightroom + dav
 Changes on top of SchmockLord's upstream
 
 - running `generate_config.sh <file>` against one of the config_X.plist will patch serials from `secrets.env` file. See `secrets.example` for inspiration on creating secrets file
-- Added BrcmPatchRAM for Bluetooth support
+- Enabled BrcmPatchRAM for Bluetooth support
 - `UpdateSMBIOSMode=Custom` & `CustomSMBIOSGuid=true` for Windows boot support
+- Added Solarflare 10GBe NIC support
 
 # Fork ChangeLog
 #### Oct 2022
@@ -60,3 +61,4 @@ Changes on top of SchmockLord's upstream
 - added script to print currently booted OC version
 - enabled RadeonSensor kexts
 - Added Solarflare 10GBe kext
+- add boot .contentVisibility to hide entries from bootloader
