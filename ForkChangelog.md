@@ -58,3 +58,5 @@ Changes on top of SchmockLord's upstream
 - sunc to upstream [d7b4e99](https://github.com/ashishpandey/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D/commit/d7b4e999bed6e7d1c84e14ab19b614e5633cd6db)
 - OC 0.9.3
 - added script to print currently booted OC version
+- enabled RadeonSensor kexts
+- Added Solarflare 10GBe kext
