@@ -1,4 +1,4 @@
-My own setup and changes - use case is daily work driver running lightroom + davinci resolve. Dual boot into windows (separate drive) for occasion work
+My own setup and changes - use case is daily work driver running lightroom + davinci resolve. Dual boot into windows (separate drive) for occasional work
 
 # Hardware
 - Intel i9-10900k
@@ -11,15 +11,15 @@ My own setup and changes - use case is daily work driver running lightroom + dav
 - GPU: MSI Gaming X Trio RX 6900XT
   - DisplayPort to LG 31MU97-B
   - DisplayPort to motherboard displayport in
+  - motherboard thunderbolt out connected to LG ultrafine 24"
 - Caldigit TS3 Plus Thunderbolt 3 Dock
   - connected to motherboard thunderbolt out
-  - connected to LG ultrafine 24" via thunderbolt out
 - SolarFlare S6102 SFN5122F Dual Port 10Gbe PCIe Adapter SF329-9021-R7 
   - connected to unraid server via a DAC
 - PSU: Corsair HXi 1000 (USB link not connected to avoid sleep-wake issues)
 
 # Software
-- MacOS ~Big Sur~ Monterey
+- MacOS Sonoma
 - iStats Menus
 - HWInfo
 
@@ -38,6 +38,12 @@ Changes on top of SchmockLord's upstream
 # Fork ChangeLog
 
 _reverse chronology: newest entries first_
+
+#### Feb 2025
+- sync to upstream [d9e9a82](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D/tree/d9e9a828662f77c7efb6cdbd5d76f27c4c13cc65) - OC 1.0.1
+- Ready for Sequoia update
+- Fixed missing Solarflare and BrcmPatchRAM kext config
+- Updated BrcmPatchRAM to 2.6.9
 
 #### Jun 2024
 - sync to upstream [772f630](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D/tree/772f63027c796914b37a59e5a969b18a09a78f9b) - OC 0.9.3
