@@ -20,6 +20,6 @@ jobs:
 
       - uses: brokeyourbike/ocvalidate-action@v0.3
         with:
-          opencore-version: '1.0.1'
+          opencore-version: '1.0.7'
 
       - run: ocvalidate "EFI/OC/${{ matrix.config }}"

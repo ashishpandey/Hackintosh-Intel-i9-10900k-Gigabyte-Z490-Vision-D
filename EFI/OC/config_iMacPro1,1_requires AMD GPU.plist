@@ -110,6 +110,8 @@
 			<false/>
 			<key>AvoidRuntimeDefrag</key>
 			<true/>
+			<key>ClearTaskSwitchBit</key>
+			<false/>
 			<key>DevirtualiseMmio</key>
 			<true/>
 			<key>DisableSingleUser</key>
@@ -184,7 +186,7 @@
 				<key>BundlePath</key>
 				<string>Lilu.kext</string>
 				<key>Comment</key>
-				<string>V1.6.0 | Patch engine</string>
+				<string>V1.7.2 | Patch engine</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -202,7 +204,7 @@
 				<key>BundlePath</key>
 				<string>VirtualSMC.kext</string>
 				<key>Comment</key>
-				<string></string>
+				<string>V1.3.7</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -292,7 +294,7 @@
 				<key>BundlePath</key>
 				<string>WhateverGreen.kext</string>
 				<key>Comment</key>
-				<string></string>
+				<string>V1.7.0</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -310,7 +312,7 @@
 				<key>BundlePath</key>
 				<string>AppleALC.kext</string>
 				<key>Comment</key>
-				<string>Audio patches</string>
+				<string>V1.9.7 | Audio patches</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -364,7 +366,7 @@
 				<key>BundlePath</key>
 				<string>SMCProcessor.kext</string>
 				<key>Comment</key>
-				<string></string>
+				<string>from VirtualSMC</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -382,7 +384,7 @@
 				<key>BundlePath</key>
 				<string>SMCSuperIO.kext</string>
 				<key>Comment</key>
-				<string></string>
+				<string>from VirtualSMC</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -400,7 +402,7 @@
 				<key>BundlePath</key>
 				<string>IntelMausiEthernet.kext</string>
 				<key>Comment</key>
-				<string>V2.5.3d3 | Intel Ethernet LAN</string>
+				<string>V3.0.0 | Intel Ethernet LAN</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -438,7 +440,7 @@
 				<key>Comment</key>
 				<string>V1.0 | USB-Port mapping for Gigabyte Z490 Vision D for iMac20,2.  Alternatively Disable this kext and enable SSDT-USB-Ports-Z490-VisionD.aml and the ACPI-Delete of the SSDT-7-xh_cmsd4.aml</string>
 				<key>Enabled</key>
-				<false/>
+				<true/>
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MaxKernel</key>
@@ -456,7 +458,7 @@
 				<key>Comment</key>
 				<string>V1.0 | USB-Port mapping for Gigabyte Z490 Vision D for iMacPro1,1.  Alternatively Disable this kext and enable SSDT-USB-Ports-Z490-VisionD.aml and the ACPI-Delete of the SSDT-7-xh_cmsd4.aml</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string></string>
 				<key>MaxKernel</key>
@@ -470,31 +472,13 @@
 				<key>Arch</key>
 				<string>Any</string>
 				<key>BundlePath</key>
-				<string>SMCRadeonGPU.kext</string>
+				<string>SMCRadeonSensors.kext</string>
 				<key>Comment</key>
-				<string>V0.3.1</string>
+				<string>V2.4.0</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
-				<string>Contents/MacOS/SMCRadeonGPU</string>
-				<key>MaxKernel</key>
-				<string></string>
-				<key>MinKernel</key>
-				<string></string>
-				<key>PlistPath</key>
-				<string>Contents/Info.plist</string>
-			</dict>
-			<dict>
-				<key>Arch</key>
-				<string>Any</string>
-				<key>BundlePath</key>
-				<string>RadeonSensor.kext</string>
-				<key>Comment</key>
-				<string>V0.3.1</string>
-				<key>Enabled</key>
-				<true/>
-				<key>ExecutablePath</key>
-				<string>Contents/MacOS/RadeonSensor</string>
+				<string>Contents/MacOS/SMCRadeonSensors</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
@@ -508,7 +492,7 @@
 				<key>BundlePath</key>
 				<string>AppleIntelI210Ethernet.kext</string>
 				<key>Comment</key>
-				<string>Needed for the I225-V with macOS Ventura</string>
+				<string>Needed for the I225-V with macOS Ventura+</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -526,7 +510,7 @@
 				<key>BundlePath</key>
 				<string>BlueToolFixup.kext</string>
 				<key>Comment</key>
-				<string>BrcmPatchRAM V2.6.9 | Bluetooth Fix from acidanthera/BrcmPatchRAM</string>
+				<string>BrcmPatchRAM V2.7.2 | Bluetooth Fix from acidanthera/BrcmPatchRAM</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -544,7 +528,7 @@
 				<key>BundlePath</key>
 				<string>BrcmFirmwareData.kext</string>
 				<key>Comment</key>
-				<string>BrcmPatchRAM V2.6.9 | Bluetooth Firmware Data from acidanthera/BrcmPatchRAM</string>
+				<string>BrcmPatchRAM V2.7.2 | Bluetooth Firmware Data from acidanthera/BrcmPatchRAM</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -562,7 +546,7 @@
 				<key>BundlePath</key>
 				<string>BrcmPatchRAM3.kext</string>
 				<key>Comment</key>
-				<string>BrcmPatchRAM V2.6.9 | Bluetooth Firmware Patcher from acidanthera/BrcmPatchRAM</string>
+				<string>BrcmPatchRAM V2.7.2 | Bluetooth Firmware Patcher from acidanthera/BrcmPatchRAM</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -580,7 +564,7 @@
 				<key>BundlePath</key>
 				<string>BrcmNonPatchRAM2.kext</string>
 				<key>Comment</key>
-				<string>BrcmPatchRAM V2.6.9 | Bluetooth Firmware Patcher from acidanthera/BrcmPatchRAM</string>
+				<string>BrcmPatchRAM V2.7.2 | Bluetooth Firmware Patcher from acidanthera/BrcmPatchRAM</string>
 				<key>Enabled</key>
 				<true/>
 				<key>ExecutablePath</key>
@@ -609,7 +593,7 @@
 				<string></string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
-			</dict>
+			</dict>			
 		</array>
 		<key>Block</key>
 		<array>
@@ -1242,6 +1226,8 @@
 			<false/>
 		</dict>
 		<key>ReservedMemory</key>
+		<array/>
+		<key>Unload</key>
 		<array/>
 	</dict>
 </dict>

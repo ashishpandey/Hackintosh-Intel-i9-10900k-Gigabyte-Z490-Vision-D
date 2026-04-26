@@ -24,7 +24,7 @@ My own setup and changes - use case is daily work driver running lightroom + dav
 - HWInfo
 
 # Opencore specifics
-- Currently using **iMac20,2** - `config_iMac20,2__iGPU display output`
+- Currently using **iMacPro1,1** - `config_iMacPro1,1_requires AMD GPU`
 
 # Differences from upstream
 
@@ -38,6 +38,19 @@ Changes on top of SchmockLord's upstream
 # Fork ChangeLog
 
 _reverse chronology: newest entries first_
+
+#### Apr 2026
+- sync to upstream [1253031](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D/tree/1253031fd579532a98173cc34ecff0ed0b6f9427) - OC 1.0.4
+- upgrade to OC 1.0.7
+- kext upgrades for Tahoe (MacOS 26)
+  - AppleALC 1.9.7
+  - BrcmPatchRAM 2.7.2
+  - IntelMausiEthernet 3.0.0
+  - Lilu 1.7.2
+  - RestrictEvents 1.1.6 (?)
+  - VirtualSMC 1.3.7
+  - WhateverGreen 1.7.0
+- migrated from SMCRadeonGPU/RadeonSensor to SMCRadeonSensors 2.4.0
 
 #### Feb 2025
 - sync to upstream [d9e9a82](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D/tree/d9e9a828662f77c7efb6cdbd5d76f27c4c13cc65) - OC 1.0.1
