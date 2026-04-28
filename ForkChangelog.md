@@ -24,7 +24,7 @@ My own setup and changes - use case is daily work driver running lightroom + dav
 - HWInfo
 
 # Opencore specifics
-- Currently using **iMacPro1,1** - `config_iMacPro1,1_requires AMD GPU`
+- Currently using **iMac20,2** - `config_iMac20,2__iGPU display output`
 
 # Differences from upstream
 
@@ -51,6 +51,7 @@ _reverse chronology: newest entries first_
   - VirtualSMC 1.3.7
   - WhateverGreen 1.7.0
 - migrated from SMCRadeonGPU/RadeonSensor to SMCRadeonSensors 2.4.0
+- Tahoe compatibility: Upgrade USBMod kexts to use IOClass AppleUSBHostMergeProperties
 
 #### Feb 2025
 - sync to upstream [d9e9a82](https://github.com/SchmockLord/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Vision-D/tree/d9e9a828662f77c7efb6cdbd5d76f27c4c13cc65) - OC 1.0.1
